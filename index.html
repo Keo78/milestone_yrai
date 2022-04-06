@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <title>Gallery Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        :root {
+            --overlay-color: #03a9f4;
+        }
+
+        .showcase {
+            position: absolute;
+            right: 0;
+            width: 100%;
+            min-height: 100vh;
+            padding: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #111;
+            color: #fff;
+            z-index: 2;
+            transition: 0.5s;
+        }
+
+        .showcase.active {
+            right: 300px;
+        }
+
+        .showcase header {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            padding: 40px 100px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toggle {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: url("img/menu.png");
+            background-repeat: no-repeat;
+            background-size: 60px;
+            background-position: center;
+            cursor: pointer;
+        }
+
+        .toogle.active {
+            background: url("img/close.png");
+            background-repeat: no-repeat;
+            background-size: 25px;
+            background-position: center;
+        }
+
+        .showcase video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-color);
+            mix-blend-mode: overlay;
+        }
+
+        .text {
+            position: relative;
+            z-index: 10;
+            line-height: 2;
+        }
+
+
+
+
+        .text p {
+            font-size: 1.1em;
+            margin: 20px 0;
+            font-weight: 400;
+            max-width: 700px;
+
+        }
+
+        .text a {
+            display: inline-block;
+            font-size: 1em;
+            background-color: #fff;
+            padding: 10px 30px;
+            text-decoration: none;
+            color: #111;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.2s;
+            cursor: pointer;
+
+        }
+
+        .text a:hover {
+            transform: scale(0.5) translateY(-5px);
+
+        }
+
+        .social {
+
+            max-height: 100%;
+            padding-left: 20px;
+            position: fixed;
+            bottom: 20px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social li a {
+            display: flex;
+            font: invert(1);
+            margin-right: 20px;
+            transform: scale(0.5);
+            transition: 0.5s;
+            opacity: 0.5;
+
+        }
+
+        .social li a:hover {
+            transform: scale(0.5) translateY(-15px);
+
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu ul {
+            position: relative;
+            list-style: none;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #111010;
+
+        }
+
+        .menu ul li a:hover {
+            color: var(--overlay-color);
+        }
+
+        @media(max-width: 798px) {
+
+            .showcase,
+            .showcase header {
+                padding: 40px;
+            }
+
+            .text h2 {
+                font-size: 3em;
+            }
+
+            .text h3 {
+                font-size: 2em;
+            }
+        }
+
+        .art {
+
+            margin: auto;
+            display: flex;
+            z-index: 1;
+
+        }
+
+        .art img {
+            width: 90%;
+
+        }
+
+
+
+        .logo {
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="showcase active">
+        <header>
+            <h2 class="logo">GALLERY DEPT.</h2>
+            <div class="toggle active"></div>
+        </header>
+        <video src="img/gallery.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+
+        <div class="text">
+            <h2>GALLERY DEPT</h2>
+            <h2>Always $trive And Prosper</h2>
+            <h4> “Wealth is of the heart and mind, not the pocket.” - Pharrell Williams </h4>
+            <p>This website is intended to explore different Art Styles from some of my favorite artist. Art has a huge
+                diversity and you can explore to learn more!</p>
+            <a href="https://www.moma.org/">Explore</a>
+        </div>
+
+        <div class="art">
+            <div class="card">
+                <img src="img/waves.jpg" alt="waves">
+            </div>
+
+            <div class="card">
+                <img src="img/cherry.jpg" alt="cherry">
+            </div>
+
+            <div class="card">
+                <img src="img/jap1.png" alt="Japan">
+            </div>
+
+
+
+            <ul class="social">
+
+                <li><a href="#"><img src="img/fb.jpg" alt="fb"></a></li>
+                <li><a href="#"><img src="img/Twitter.jpg" alt="fb"></a></li>
+                <li><a href="#"><img src="img/Instagram.jpg" alt="fb"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="japan.html">Japanese Art Styles</a></li>
+            <li><a href="#">Artist2</a></li>
+            <li><a href="#">Artist3</a></li>
+            <li><a href="#">Artist4</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector('.toggle')
+        const showcase = document.querySelector('.showcase')
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active')
+            showcase.classList.toggle('active')
+        })
+    </script>
+
+</body>
+
+</html>
